@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     padding: 30px 20px 60px;
 }
 
@@ -165,37 +165,39 @@ h1 {
     transform: rotate(90deg);
     transition-delay: 0.4s;
 }
+
 .galeria {
-    width: min(1000px, 90vw);
-    margin-top: 50px;
-    text-align: center;
+    width: min(700px, 90vw);
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .galeria h2 {
     font-family: 'cause', sans-serif;
-    font-size: 40px;
+    font-size: 36px;
     color: #333;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 18px;
 }
 
 .galeria-grid {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    justify-items: center;
 }
 
 .galeria-grid img {
-    width: 100%;
-    height: 220px;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.galeria-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    display: block;
 }
 
 @media screen and (max-width: 400px) {
@@ -211,5 +213,36 @@ h1 {
         border-right: 150px solid transparent;
         border-left: 150px solid transparent;
     }
-    
+     .galeria {
+        width: 300px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria h2 {
+        font-family: 'cause', sans-serif;
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .galeria-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+        gap: 12px;
+        justify-items: center;
+    }
+
+    .galeria-grid img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 14px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+        display: block;
+    }
 }
